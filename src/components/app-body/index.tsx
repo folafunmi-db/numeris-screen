@@ -6,6 +6,8 @@ import Money from "@/assets/money.png";
 import { ChangeIcon } from "../icons/change";
 import { PeopleIcon } from "../icons/people";
 import { ActionList } from "./actions";
+import { RecentInvoices } from "./recent-invoices";
+import { RecentActivites } from "./recent-activities";
 
 export type MetricListType = {
   title: string;
@@ -118,7 +120,7 @@ export const AppBody = () => {
           <MetricList list={metricsList} />
         </div>
 
-        <div className="w-full flex justify-start items-center gap-10 flex-wrap">
+        <div className="w-full flex justify-start items-center gap-6 flex-wrap">
           <p className="font-medium text-[20px] leading-[24.86px] text-[#1F1F23]">
             Invoice
           </p>
@@ -127,6 +129,11 @@ export const AppBody = () => {
 
         <div className="w-full gap-[24px] grid grid-cols-[repeat(auto-fit,minmax(270px,1fr))]">
           <ActionList list={actionsList} />
+        </div>
+
+        <div className="w-full grid grid-cols-11 gap-8 mb-10">
+          <RecentInvoices />
+          <RecentActivites />
         </div>
       </div>
     </div>
