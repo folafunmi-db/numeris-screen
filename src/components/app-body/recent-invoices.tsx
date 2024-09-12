@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { InvoicesCard } from "./invoices-cards";
 
 export const RecentInvoices = () => {
   const ref = useRef(null);
@@ -14,7 +15,7 @@ export const RecentInvoices = () => {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
         duration: 0.4,
-        delay: 0.15,
+        delay: 0.25,
         ease: "easeInOut",
       }}
       className="w-full col-span-6 p-[32px] bg-white rounded-[24px] flex flex-col justify-start items-start gap-6"
@@ -27,7 +28,7 @@ export const RecentInvoices = () => {
           View All invoices
         </button>
       </div>
-      <div className="w-full flex flex-col gap-6"></div>
+      <InvoicesCard />
     </motion.div>
   );
 };

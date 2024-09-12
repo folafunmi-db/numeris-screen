@@ -15,7 +15,7 @@ export const RecentActivites = () => {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
         duration: 0.4,
-        delay: 0.25,
+        delay: 0.4,
         ease: "easeInOut",
       }}
       className="w-full col-span-5 p-[32px] bg-white rounded-[24px] flex flex-col justify-start items-start gap-6"
