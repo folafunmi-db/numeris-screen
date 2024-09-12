@@ -3,7 +3,7 @@ import { ChevronDown } from "../icons/chevron-down";
 
 export const Navbar = () => {
   return (
-    <div className="py-[18px] border-b border-[#A1B8FF33] w-full flex justify-between items-center gap-2 flex-wrap">
+    <div className="animate-fadeIn py-[18px] border-b border-[#A1B8FF33] w-full flex justify-between items-center gap-2 flex-wrap">
       <h1 className="font-medium text-[28px] text-[#373B47]">INVOICE</h1>
       <div className="flex justify-end items-center gap-6">
         <button className="bg-white rounded-full w-[64px] h-[64px] flex justify-center items-center">

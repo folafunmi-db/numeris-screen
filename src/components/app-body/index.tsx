@@ -102,7 +102,7 @@ export const AppBody = () => {
       <div className="px-10 max-w-[90rem] mx-auto gap-10 flex flex-col w-full">
         <Navbar />
 
-        <div className="w-full flex justify-between items-center gap-2 flex-wrap">
+        <div className="animate-fadeIn w-full flex justify-between items-center gap-2 flex-wrap">
           <p className="font-medium text-[32px] text-[#1F1F23] leading-[39.78px]">
             Invoice
           </p>
@@ -120,7 +120,7 @@ export const AppBody = () => {
           <MetricList list={metricsList} />
         </div>
 
-        <div className="w-full flex justify-start items-center gap-6 flex-wrap">
+        <div className="animate-fadeIn w-full flex justify-start items-center gap-6 flex-wrap">
           <p className="font-medium text-[20px] leading-[24.86px] text-[#1F1F23]">
             Invoice
           </p>
