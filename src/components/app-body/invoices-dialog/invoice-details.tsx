@@ -330,7 +330,7 @@ export const InvoicesDetails = () => {
         initial="hidden"
         animate="visible"
         variants={listVariants}
-        className="w-full min-h-[99px] bg-[#F6F8FA] rounded-[24px] px-[24px] py-[16px] text-base leading-[19.57px] text-[#666F77] flex flex-col"
+        className="w-full min-h-[99px] bg-[#F6F8FA] rounded-[24px] gap-1 px-[24px] py-[16px] text-base leading-[19.57px] text-[#666F77] flex flex-col"
       >
         <motion.span
           variants={childVariants}

@@ -55,16 +55,16 @@ const DialogContent = React.forwardRef<
             opacity="0.4"
             d="M12.9289 12.929L27.0711 27.0711"
             stroke="#292D32"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M12.9289 27.0711L27.0711 12.929"
             stroke="#292D32"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
 

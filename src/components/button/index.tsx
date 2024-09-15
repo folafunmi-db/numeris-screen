@@ -2,8 +2,10 @@ export const Button = ({
   variant = 1,
   children,
   className,
+  as,
   ...props
-}: { variant?: number } & React.ComponentPropsWithRef<"button">) => {
+}: { as?: any; variant?: number } & React.ComponentPropsWithRef<"button">) => {
+  const Comp = as ?? "button";
   const getStyle = (arg: number) => {
     switch (arg) {
       case 1:
@@ -16,8 +18,8 @@ export const Button = ({
     }
   };
   return (
-    <button {...props} className={`${getStyle(variant)} ${className}`}>
+    <Comp {...props} className={`${getStyle(variant)} ${className}`}>
       {children}
-    </button>
+    </Comp>
   );
 };

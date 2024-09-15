@@ -7,6 +7,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/dropdown";
+
 import { Button } from "../../button";
 import { Badge } from "../../badge";
 import { Tick } from "./tick";
@@ -46,7 +53,7 @@ export const InvoicesDialog = () => {
   ];
 
   return (
-    <DialogContent className="flex gap-4 flex-col w-[95vw] h-[80svh]">
+    <DialogContent className="flex gap-4 flex-col w-[95vw] max-w-[1334px] max-h-[1567px] h-[80svh]">
       <div className="animate-fadeIn flex h-fit flex-row w-full justify-between gap-4">
         <DialogHeader className="h-fit flex flex-col">
           <DialogTitle>Invoice - 1023494 - 2304</DialogTitle>
@@ -58,10 +65,24 @@ export const InvoicesDialog = () => {
           <Button variant={2} className="!leading-[16px] !text-[#003EFF]">
             Download as pdf
           </Button>
+
           <Button className="!leading-[16px]">Send invoice</Button>
-          <Button variant={2} className="!px-[24px] !text-[#373B47]">
-            More
-          </Button>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button
+                as="div"
+                variant={2}
+                className="!px-[24px] !text-[#373B47]"
+              >
+                More
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[262px]" align="end">
+              <DropdownMenuItem>Duplicate invoice</DropdownMenuItem>
+              <DropdownMenuItem>get sharable link</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
       <div className="animate-fadeIn ">
