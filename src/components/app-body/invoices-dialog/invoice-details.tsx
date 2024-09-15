@@ -98,6 +98,21 @@ const itemsInfo = [
   },
 ];
 
+const aggregateList = [
+  {
+    title: "Subtotal",
+    amount: "$6,697,200.00",
+  },
+  {
+    title: "Discount (2.5%)",
+    amount: "$167,430.00",
+  },
+  {
+    title: "Total amount due",
+    amount: "$6,529,770.00",
+  },
+];
+
 export const InvoicesDetails = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -212,7 +227,7 @@ export const InvoicesDetails = () => {
         <div className="flex-1 bg-[#E3E6EF] h-[1px] w-full" />
       </div>
 
-      <div className="flex flex-col w-full">
+      <div className="gap-6 flex flex-col w-full">
         {itemsInfo.map((el, index) => (
           <motion.li
             initial={{ opacity: 0, y: -10 }}
@@ -223,9 +238,9 @@ export const InvoicesDetails = () => {
               ease: "easeInOut",
             }}
             key={`${el.amount} ${index}`}
-            className="py-[16px] grid grid-cols-4 gap-4"
+            className="py-[16px] grid grid-cols-10 gap-4"
           >
-            <div className="flex gap-1 flex-col">
+            <div className="flex gap-1 flex-col col-span-4">
               <p className="text-[16px] leading-[19.57px] text-[#1F1F23]">
                 {el.title}
               </p>
@@ -235,17 +250,53 @@ export const InvoicesDetails = () => {
                 </p>
               )}
             </div>
-            <p className="text-center text-[16px] leading-[19.57px] text-[#1F1F23]">
+            <p className="text-center text-[16px] col-span-1 leading-[19.57px] text-[#1F1F23]">
               {el.quantity}
             </p>
-            <p className="text-end text-[16px] leading-[19.57px] text-[#1F1F23]">
+            <p className="text-end text-[16px] col-span-2 leading-[19.57px] text-[#1F1F23]">
               {el.amount}
             </p>
-            <p className="text-end text-[16px] leading-[19.57px] text-[#1F1F23]">
+            <p className="text-end text-[16px] col-span-3 leading-[19.57px] text-[#1F1F23]">
               {el.total}
             </p>
           </motion.li>
         ))}
+
+        <div className="gap-[25.5px] flex flex-col w-full">
+          {aggregateList.map((el, index) => (
+            <motion.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.2,
+                delay: index * 0.1 + 0.4,
+                ease: "easeInOut",
+              }}
+              key={`${el.amount} ${index}`}
+              className="items-baseline grid grid-cols-3 gap-4"
+            >
+              <p></p>
+              <p
+                className={
+                  index === 2
+                    ? "py-4 text-start text-[18px] uppercase leading-[22.37px] font-medium text-[#373B47]"
+                    : "text-start text-[14px] uppercase leading-[17.12px] text-[#B7BDCF]"
+                }
+              >
+                {el.title}
+              </p>
+              <p
+                className={
+                  index === 2
+                    ? "py-4 text-end text-[25px] leading-[31.5px] font-bold text-[#373B47]"
+                    : "text-end text-[20px] leading-[24.46px] text-[#373B47]"
+                }
+              >
+                {el.amount}
+              </p>
+            </motion.li>
+          ))}
+        </div>
       </div>
 
       <div className="w-full bg-[#FFFFFF] border border-[#E3E6EF] rounded-[24px] px-[24px] py-[16px] text-base leading-[19.57px] text-[#666F77] flex flex-col gap-2">
