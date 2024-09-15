@@ -69,6 +69,35 @@ const invoiceInfo = [
   },
 ];
 
+const itemsInfo = [
+  {
+    title: "Email Marketing",
+    sub: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium ",
+    quantity: 10,
+    amount: "$1500",
+    total: "$15,000.00",
+  },
+  {
+    title: "Video looping effect",
+    quantity: 6,
+    amount: "$1,110,500",
+    total: "$6,663,000.00",
+  },
+  {
+    title: "Graphic design for emails",
+    sub: "Tsit voluptatem accusantium ",
+    quantity: 7,
+    amount: "$2,750",
+    total: "$19,250.00",
+  },
+  {
+    title: "Video looping effect",
+    quantity: 6,
+    amount: "$1,110,500",
+    total: "$6,663,000.00",
+  },
+];
+
 export const InvoicesDetails = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -83,9 +112,9 @@ export const InvoicesDetails = () => {
         delay: 0.25,
         ease: "easeInOut",
       }}
-      className="border-[#E3E6EF] rounded-[24px] border w-full col-span-6 p-[32px] bg-white flex flex-col justify-start items-start gap-6"
+      className="border-[#E3E6EF] rounded-[40px] border w-full col-span-6 p-[32px] bg-white flex flex-col justify-start items-start gap-6"
     >
-      <div className="animate-fadeIn w-full bg-[#FCDDEC] rounded-[24px] px-[24px] py-[16px] text-base leading-[19.57px] text-[#666F77] flex flex-col gap-[32px]">
+      <div className="animate-fadeIn w-full bg-[#FCDDEC] rounded-[40px] px-[24px] py-[16px] text-base leading-[19.57px] text-[#666F77] flex flex-col gap-[32px]">
         <div className="w-full flex justify-between gap-2">
           <motion.div
             initial="hidden"
@@ -176,6 +205,49 @@ export const InvoicesDetails = () => {
         </div>
       </div>
 
+      <div className="animate-fadeIn flex items-center gap-10 w-full">
+        <p className="font-medium text-[20px] text-[#1F1F23] leading-[24.86px]">
+          Items
+        </p>
+        <div className="flex-1 bg-[#E3E6EF] h-[1px] w-full" />
+      </div>
+
+      <div className="flex flex-col w-full">
+        {itemsInfo.map((el, index) => (
+          <motion.li
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.2,
+              delay: index * 0.1 + 0.4,
+              ease: "easeInOut",
+            }}
+            key={`${el.amount} ${index}`}
+            className="py-[16px] grid grid-cols-4 gap-4"
+          >
+            <div className="flex gap-1 flex-col">
+              <p className="text-[16px] leading-[19.57px] text-[#1F1F23]">
+                {el.title}
+              </p>
+              {el.sub && (
+                <p className="text-[13px] leading-[15.9px] text-[#666F77]">
+                  {el.sub}
+                </p>
+              )}
+            </div>
+            <p className="text-center text-[16px] leading-[19.57px] text-[#1F1F23]">
+              {el.quantity}
+            </p>
+            <p className="text-end text-[16px] leading-[19.57px] text-[#1F1F23]">
+              {el.amount}
+            </p>
+            <p className="text-end text-[16px] leading-[19.57px] text-[#1F1F23]">
+              {el.total}
+            </p>
+          </motion.li>
+        ))}
+      </div>
+
       <div className="w-full bg-[#FFFFFF] border border-[#E3E6EF] rounded-[24px] px-[24px] py-[16px] text-base leading-[19.57px] text-[#666F77] flex flex-col gap-2">
         <span className="font-medium text-[#697598] text-[12px] leading-[14.92xp] uppercase">
           Payment information
@@ -187,7 +259,7 @@ export const InvoicesDetails = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.2,
-                delay: index * 0.1 + 0.4,
+                delay: index * 0.1 + 0.54,
                 ease: "easeInOut",
               }}
               key={`${el.name} ${index}`}
