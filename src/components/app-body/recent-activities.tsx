@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { ActivitesCard } from "./activities-cards";
 import { useRef } from "react";
+import { Button } from "../button";
 
 export const RecentActivites = () => {
   const ref = useRef(null);
@@ -24,9 +25,12 @@ export const RecentActivites = () => {
         <p className="text-[#1F1F23] text-[20px] font-medium leading-[24.86px]">
           Recent Activites
         </p>
-        <button className="uppercase whitespace-nowrap text-xs leading-[16px] py-[24px] px-[86px] outline-offset-[-1px] transition bg-[#FFFFFF] hover:bg-[#E3E6EF]/10 outline outline-1 outline-[#E3E6EF] text-[#003EFF] font-medium rounded-[40px]">
+        <Button
+          variant={2}
+          className="!text-xs !leading-[16px] !text-[#003EFF]"
+        >
           View All
-        </button>
+        </Button>
       </div>
       <ActivitesCard />
     </motion.div>

@@ -8,6 +8,7 @@ import { PeopleIcon } from "../icons/people";
 import { ActionList } from "./actions";
 import { RecentInvoices } from "./recent-invoices";
 import { RecentActivites } from "./recent-activities";
+import { Button } from "../button";
 
 export type MetricListType = {
   title: string;
@@ -107,12 +108,8 @@ export const AppBody = () => {
             Invoice
           </p>
           <div className="animate-fadeIn flex justify-end items-center gap-[32px] flex-wrap">
-            <button className="uppercase text-sm leading-[17.4px] py-[24px] px-[86px] outline-offset-[-1px] transition bg-[#FFFFFF] hover:bg-[#E3E6EF]/10 outline outline-1 outline-[#E3E6EF] text-[#697598] font-medium rounded-[40px]">
-              see what’s new
-            </button>
-            <button className="uppercase text-base leading-[19.89px] py-[24px] px-[86px] transition bg-[#003EFF] hover:bg-[#003EFF]/[.90] text-white rounded-[40px] font-medium">
-              CREATE
-            </button>
+            <Button variant={2}>see what’s new</Button>
+            <Button variant={1}>CREATE</Button>
           </div>
         </div>
 
