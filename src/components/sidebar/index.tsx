@@ -53,7 +53,7 @@ export const Sidebar = () => {
   ];
 
   return (
-    <div className="fixed top-0 gap-10 text-sm bg-white hidden md:flex min-h-full w-[280px] py-10 px-6 flex-col">
+    <div role="complementary" className="fixed top-0 gap-10 text-sm bg-white hidden md:flex min-h-full w-[280px] py-10 px-6 flex-col">
       <div className="animate-fadeIn">
         <Logo />
       </div>
