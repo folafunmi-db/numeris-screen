@@ -1,10 +1,15 @@
+import { ElementType } from "react";
+
 export const Button = ({
   variant = 1,
   children,
   className,
   as,
   ...props
-}: { as?: any; variant?: number } & React.ComponentPropsWithRef<"button">) => {
+}: {
+  as?: ElementType;
+  variant?: number;
+} & React.ComponentPropsWithRef<"button">) => {
   const Comp = as ?? "button";
   const getStyle = (arg: number) => {
     switch (arg) {
